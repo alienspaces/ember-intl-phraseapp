@@ -4,10 +4,12 @@ Enable PhraseApp In-Context editor for emberjs applications that use ember-intl
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-intl-phraseapp`
-* `npm install`
-* `bower install`
+```
+  "dependencies": {
+    "ember-intl": "2.15.1",
+    "ember-intl-phraseapp": "git+https://github.com/alienspaces/ember-intl-phraseapp.git#master"
+  }
+```
 
 ## Configuration
 
