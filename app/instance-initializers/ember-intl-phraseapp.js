@@ -1,0 +1,1 @@
+export { default, initialize } from 'ember-intl-phraseapp/instance-initializers/ember-intl-phraseapp';
