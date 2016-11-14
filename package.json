@@ -1,7 +1,7 @@
 {
   "name": "ember-intl-phraseapp",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.0",
+  "description": "Provide support for the PhraseApp 'In-Context Editor' for emberjs applications that use ember-intl",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -35,6 +35,7 @@
     "ember-data": "^2.9.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^1.0.5",
+    "ember-intl": "^2.15.1",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "ember-welcome-page": "^1.0.3",
