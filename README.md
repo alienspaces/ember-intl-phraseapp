@@ -1,6 +1,6 @@
 # Ember-intl-phraseapp
 
-This README outlines the details of collaborating on this Ember addon.
+Enable PhraseApp In-Context editor for emberjs applications that use ember-intl
 
 ## Installation
 
@@ -8,6 +8,19 @@ This README outlines the details of collaborating on this Ember addon.
 * `cd ember-intl-phraseapp`
 * `npm install`
 * `bower install`
+
+## Configuration
+
+```
+ intl-messageformat-parser barfs if return string contains { } characters
+ so include something like the following in your PHRASEAPP_CONFIG
+
+ window.PHRASEAPP_CONFIG = {
+   projectId: '',
+   prefix: '[[__',
+   suffix: "__]]"
+ };
+```
 
 ## Running
 
