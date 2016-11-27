@@ -1,34 +1,59 @@
 import Ember from 'ember';
 import IntlService from 'ember-intl/services/intl';
+import config from 'ember-get-config';
 
 const { makeArray, get } = Ember;  // jshint ignore:line
 
-var phraseApp = true;
+export function initialize( applicationInstance ) {
 
-export function initialize(/* applicationInstance */) {
-  console.log('ember-intl-init is :' + IntlService);
+  const { phraseApp } = config;
+
+  if (!phraseApp) {
+      console.log('phraseApp missing configuration, wont initialize phraseApp in-context-editor');
+      return;
+  }
+
+  if (phraseApp.enabled !== true) {
+      console.log('phraseApp not enabled, wont initialize phraseApp in-context-editor');
+      return;
+  }
+
+  //
+  // intl-messageformat-parser barfs if return string contains { } characters
+  // so we'll use square brackets by default
+  //
+  var phraseAppPrefix = phraseApp.prefix || '[[__';
+  var phraseAppSuffix = phraseApp.suffix || '__]]';
+
+  // console.log('Using phraseAppSuffix ' + phraseAppSuffix + ' phraseAppPrefix ' + phraseAppPrefix);
+
+  window.PHRASEAPP_CONFIG = {
+       projectId: phraseApp.projectId,
+        prefix: phraseAppPrefix,
+        suffix: phraseAppSuffix
+  };
+
+  (function() {
+    var phraseapp = document.createElement('script');
+    phraseapp.type = 'text/javascript';
+    phraseapp.async = true;
+    phraseapp.src = ['https://', 'phraseapp.com/assets/in-context-editor/2.0/app.js?', new Date().getTime()].join('');
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(phraseapp, s);
+  })();
 
   IntlService.reopen({
     findTranslationByKey(key, locales) {  // jshint ignore:line
 
-      if (phraseApp === true) {
-        //
-        // intl-messageformat-parser barfs if return string contains { } characters
-        // so include something like the following in your PHRASEAPP_CONFIG
-        //
-        // window.PHRASEAPP_CONFIG = {
-        //   projectId: '',
-        //   prefix: '[[__',
-        //   suffix: "__]]"
-        // };
-        // var retString = "[[__phrase_" + key + "__]]";
+      if (window.PHRASEAPP_CONFIG) {
         var retString = window.PHRASEAPP_CONFIG.prefix + "phrase_" + key + window.PHRASEAPP_CONFIG.suffix;
-        console.log('Returning :' + retString);
         return retString;
       }
       return this._super(...arguments);
     }
   });
+
+  return;
 }
 
 export default {
