@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": "https://github.com/alienspaces/ember-intl-phraseapp",
   "engines": {
     "node": ">= 0.12.0"
   },
