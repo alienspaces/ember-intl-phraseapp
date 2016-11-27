@@ -13,16 +13,16 @@ Provide support for the PhraseApp 'In-Context Editor' for emberjs applications t
 
 ## Configuration
 
-```
- intl-messageformat-parser barfs if return string contains { } characters
- so include something like the following in your PHRASEAPP_CONFIG
+Add the following to your `config/environment.js`:
 
- window.PHRASEAPP_CONFIG = {
-   projectId: '',
-   prefix: '[[__',
-   suffix: "__]]"
- };
 ```
+   phraseApp: {
+      enabled: true,
+      projectId :  'yourphraseappprojectid',
+      prefix: '[[__',
+      suffix: '__]]'
+    }
+ ```
 
 ## Ember CLI
 
