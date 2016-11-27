@@ -1,6 +1,6 @@
 {
   "name": "ember-intl-phraseapp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide support for the PhraseApp 'In-Context Editor' for emberjs applications that use ember-intl",
   "directories": {
     "doc": "doc",

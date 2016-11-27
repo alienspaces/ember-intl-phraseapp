@@ -5,10 +5,7 @@ Provide support for the PhraseApp 'In-Context Editor' for emberjs applications t
 ## Installation
 
 ```
-  "dependencies": {
-    "ember-intl": "2.15.1",
-    "ember-intl-phraseapp": "git+https://github.com/alienspaces/ember-intl-phraseapp.git#master"
-  }
+npm install ember-intl-phraseapp --save-dev
 ```
 
 ## Configuration
