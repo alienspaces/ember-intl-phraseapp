@@ -15,11 +15,11 @@ Add the following to your `config/environment.js`:
 ```
    phraseApp: {
       enabled: true,
-      projectId :  'yourphraseappprojectid'
+      projectId: 'yourphraseappprojectid'
     }
 ```
 
-Additional configuration that is supported with defaults:
+Additional supported configuration with defaults:
 
 Parameter | Default
 --------- | -------
