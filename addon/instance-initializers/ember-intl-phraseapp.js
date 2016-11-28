@@ -4,7 +4,7 @@ import config from 'ember-get-config';
 
 const { makeArray, get } = Ember;  // jshint ignore:line
 
-export function initialize( applicationInstance ) {
+export function initialize( /* applicationInstance */ ) {
 
   const { phraseApp } = config;
 
@@ -24,13 +24,15 @@ export function initialize( applicationInstance ) {
   //
   var phraseAppPrefix = phraseApp.prefix || '[[__';
   var phraseAppSuffix = phraseApp.suffix || '__]]';
+  var phraseAppAutoLowercase = phraseApp.autoLowercase || false;
 
   // console.log('Using phraseAppSuffix ' + phraseAppSuffix + ' phraseAppPrefix ' + phraseAppPrefix);
 
   window.PHRASEAPP_CONFIG = {
-       projectId: phraseApp.projectId,
-        prefix: phraseAppPrefix,
-        suffix: phraseAppSuffix
+    projectId: phraseApp.projectId,
+    prefix: phraseAppPrefix,
+    suffix: phraseAppSuffix,
+    autoLowercase: phraseAppAutoLowercase
   };
 
   (function() {

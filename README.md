@@ -15,11 +15,17 @@ Add the following to your `config/environment.js`:
 ```
    phraseApp: {
       enabled: true,
-      projectId :  'yourphraseappprojectid',
-      prefix: '[[__',
-      suffix: '__]]'
+      projectId :  'yourphraseappprojectid'
     }
- ```
+```
+
+Additional configuration that is supported with defaults:
+
+Parameter | Default
+--------- | -------
+prefix | '[[__'
+suffix | '__]]'
+autoLowerCase | false
 
 ## ember-cli-mirage
 
