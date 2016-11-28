@@ -1,6 +1,6 @@
 # Ember-intl-phraseapp
 
-Provide support for the PhraseApp 'In-Context Editor' for emberjs applications that use ember-intl
+Provide support for the PhraseApp 'In-Context Editor' for emberjs applications that use [ember-intl](https://github.com/jasonmit/ember-intl)
 
 ## Installation
 
